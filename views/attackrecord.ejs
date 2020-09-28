@@ -1,8 +1,15 @@
 <% include partials/header %>
-  
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
 
-
-<form method="POST" action="">
+<form method="POST" action="/record/attackrecord ">
     <label for="date">Start time</label>
     <input type="date" id="date" name="startdate"/>
     <br>
@@ -84,11 +91,20 @@
     <label for="note">Short Note</label>
     <input type="text" id="note" name="note"/>
 
-    
-    <input type="submit" value="Save"/>
-
-
 </form>
+<style>
+        #formdata{
+            background-color: #E7F3FF; 
+            padding-left: 100px;
+            padding-top: 70px;
+        }
+    </style>
+</body>
+</html>
+
+
+
+
 
 
 
