@@ -4,15 +4,15 @@
 
 <form method="POST" action="">
     <label for="date"> Start DATE</label>
-    <input type="date" id="date"/>
+    <input type="date" id="date" name="date"/>
     <br>
     
-    <label for="treatment">Medication Details</label>
-    <input type="text" id="treatment" value="relpax,paracetamol etc."/>
+    <label for="treatment">MedicationDetails</label>
+    <input type="text" id="treatment" name="medication"value="relpax,paracetamol etc."/>
 
     <br>
-    <label for="date"> Reminder Frequency</label>
-    <select>
+    <label for="date"> ReminderFrequency</label>
+    <select name="Frequency">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -24,7 +24,7 @@
         <option value="9">9</option>
         <option value="10">10</option>
     </select>
-    <select>
+    <select name="Frequency2">
         <option value="day">day</option>
         <option value="week">week</option>
         <option value="month">month</option>
@@ -33,7 +33,7 @@
     <br>
 
     <label for="note">Short Note</label>
-    <input type="text" id="note"/>
+    <input type="text" id="note" name="note"/>
     <br>
 
     

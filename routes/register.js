@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-
+const Track = require("../models/tracking")
 const User = require("../models/user")
 const View = require("../models/view")
 const Cart = require("../models/cart")
@@ -9,7 +9,7 @@ router.get("/", function(req, res) {
 	res.render("register.ejs");
 });
 
-router.post("/", function(req, res) {
+router.post("/",   (req, res) => {
 	if(req.body.password == req.body.cpassword) {
 		User.register(new User({username: req.body.username, type: "customer"}), req.body.password, function(err, user) {
 			if(err) {
@@ -40,14 +40,41 @@ router.post("/", function(req, res) {
 							}
 							else {
 								user.cart = newCart._id;
-								user.save(function(err,callback) {
+								user.save(async (err,callback) => {
 									console.log("at end",user)
 									User.findById(user._id ,(err,result)=>{
 										console.log("results",result)
 								   })
+								   // for tracking heath 
+								   console.log("username",user.username)
+								   let newtrack = new Track({
+									   username:user.username,
+									   medicationReminder:[],
+									   upcomingDoctorVisit:[],
+									   AttackRecords:[]
+								   })
+								   let savedtrack = await newtrack.save();
+								   console.log("savedtrack",savedtrack)
+
+								  /* track.create(newtrack ,(err,newtrack) => {
+									   if(err) throw err;
+									   user.track = newtrack._id;
+									   user.save((err,callback)=>{
+										   console.log("user after track",user)
+										})
+									  /* track.findOne(user.username ,(err,result)=>{
+										console.log("results of track",result)
+								        }) 
+
+									})*/
+									
+
+
                                     passport.authenticate("local")(req, res, function() {
 									res.redirect("/addProfile");
 									});
+								
+								
 								});
 							}
 						});

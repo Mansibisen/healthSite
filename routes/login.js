@@ -13,6 +13,7 @@ router.post("/", passport.authenticate("local",
 		successRedirect: "/home",
 		failureRedirect: "/"
 	}), function(req, res) {
+		
 });
 
 module.exports=router;

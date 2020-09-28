@@ -4,13 +4,13 @@
 
 <form method="POST" action="">
     <label for="date">Start time</label>
-    <input type="datetime" id="date"/>
+    <input type="date" id="date" name="startdate"/>
     <br>
     <label for="date">End time</label>
-    <input type="datetime" id="date"/>
+    <input type="date" id="date" name="enddate"/>
     <br>
-    <label>Attack type </label>
-    <select>
+    <label>Attacktype </label>
+    <select name="Attacktype">
         <option value="Don't know yet">Don't know yet</option>
         <option value="Migrane">Migrane</option>
         <option value="prodrome">prodrome</option>
@@ -19,7 +19,7 @@
     </select>
     <br>
     <label>Pain level </label>
-    <select>
+    <select name="Painlevel">
         <option value="hurts worst">hurts worst</option>
         <option value="Severe">Severe</option>
         <option value="Moderate">Moderate</option>
@@ -29,10 +29,10 @@
     </select>
     <br>
     <label for="treatment">Medication you took</label>
-    <input type="text" id="treatment"/>
+    <input type="text" id="treatment" name="medication"/>
     <br>
-    <label>relief methods </label>
-    <select>
+    <label>reliefmethods </label>
+    <select name="reliefmethods">
         <option value="sleep">sleep</option>
         <option value="yoga/meditation">yoga/meditation</option>
         <option value="Ice packs">Ice packs</option>
@@ -46,7 +46,7 @@
         <option value="other">other</option>
     </select>
     <label>Symptoms </label>
-    <select>
+    <select name="Symptoms">
         <option value="Nasal congestion">Nasal congestion</option>
         <option value="Neck Pain">Neck Pain</option>
         <option value="Insomnia">Insomnia</option>
@@ -60,7 +60,7 @@
         <option value="other">other</option>
     </select>
     <label>Did you see it coming? </label>
-    <select>
+    <select name="sense">
         <option value="No">No</option>
         <option value="Weakness">Weakness</option>
         <option value="fatigue/achiness">fatigue/achiness</option>
@@ -71,7 +71,7 @@
         <option value="other">other</option>
     </select>
     <label>how did it affected your activities? </label>
-    <select>
+    <select name="activities">
         <option value="No effect">No effect</option>
         <option value="missed family time">missed family time</option>
         <option value="Missed school">Missed school</option>
@@ -82,7 +82,7 @@
         <option value="other">other</option>
     </select>
     <label for="note">Short Note</label>
-    <input type="text" id="note"/>
+    <input type="text" id="note" name="note"/>
 
     
     <input type="submit" value="Save"/>

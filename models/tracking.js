@@ -2,24 +2,32 @@ const mongoose = require("mongoose");
 var profileSchema = new mongoose.Schema({
 	username: String,
 	medicationReminder:[{
-       details:String,
-       time:Date
+        ReminderFrequency:String,
+        MedicationDetails:String,
+       time:Date,
+       Note:String
+
         
     }],
     upcomingDoctorVisit:[{
-        data:String,
-        time:Date
+        
+        time:Date,
+        doctortype:String,
+        treatment:String,
+        note:String
          
      }],
     AttackRecords:[{
     attackType:String,
-         intensity : Number,
-         Triggers: String,
+         intensity: String,
+         starttime:Date,
+         endtime:Date,
          affectedActivities:String,
          relief:String,
          medication:String,
          Notes: String,
-         symptom:String
+         symptom:String,
+         sense:String
         }
     ]
 

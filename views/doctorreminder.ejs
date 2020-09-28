@@ -2,12 +2,12 @@
   
 
 
-<form method="POST" action="">
+<form method="POST" action="/record/setdoctorreminder">
     <label for="date"> DATE</label>
-    <input type="date" id="date"/>
+    <input type="date" id="date" name="date"/>
     <br>
     <label>Doctor Type</label>
-    <select>
+    <select name="type">
         <option value="Neurologist">Neurologist</option>
         <option value="General Physician">General Physician</option>
         <option value="ENT">ENT</option>
@@ -16,14 +16,14 @@
     </select>
     <br>
     <label for="treatment">Treatment</label>
-    <input type="text" id="treatment"/>
+    <input type="text" id="treatment" name="treatment"/>
 
     <br>
     <label for="note">Short Note</label>
-    <input type="text" id="note"/>
+    <input type="text" id="note" name="note"/>
 
     
-    <input type="submit" value="Save"/>
+    <input type="submit" value="Save"></input>
 
 
 </form>
