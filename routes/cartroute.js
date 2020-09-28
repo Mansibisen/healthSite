@@ -6,10 +6,6 @@ const express = require('express');
 const router = express.Router();
 const {isLoggedIn,isLoggedInA} = require("../middleware/fixers");
 
-
-
-
-
 router.get("/", isLoggedIn, function(req, res) {
 	var user = req.user;
 	var total = 0;
@@ -87,4 +83,4 @@ router.delete("/:id", isLoggedIn,function(req, res) {
 	});
 });
 
-module.exports=router;
+module.exports = router;
