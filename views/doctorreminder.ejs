@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
-integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <title>Doctor visit</title>
 </head>
@@ -21,11 +21,11 @@ integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ
   
 
 
-<form method="POST" action="/record/setdoctorreminder">
-    <label for="date"> DATE</label>
+<form style='padding-left: 100px;' method="POST" action="/record/setdoctorreminder">
+    <label for="date"><i class="fa fa-calendar" aria-hidden="true" style="padding-right: 5px;"></i> DATE</label>
     <input type="date" id="date" name="date"/>
-    <br>
-    <label>Doctor Type</label>
+    <br><br>
+    <label><i class="fa fa-stethoscope" aria-hidden="true" style="padding-right: 5px;"></i>  Doctor Type</label>
     <select name="type">
         <option value="Neurologist">Neurologist</option>
         <option value="General Physician">General Physician</option>
@@ -34,12 +34,13 @@ integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ
         <option value="other">other</option>
     </select>
     <br><br>
-    <label for="treatment">Treatment</label>
+    <label for="treatment"> <i class="fa fa-medkit" aria-hidden="true" style="padding-right: 5px;"></i>Treatment :</label>
     <input style="padding: 5px;"type="text" id="treatment" name="treatment"/>
 
     <br><br>
-    <label for="note">Short Note</label>
-    <input style="padding: 5px;"type="text" id="note" name="note"/>
+    <label for="note"> <i class="fa fa-comments-o" aria-hidden="true" style="padding-right: 5px;"></i>Short Note :</label>
+    <br>
+    <textarea name="note" id="note" style="padding: 5px;"type="text" id="note" placeholder="Is there something you want to share?"></textarea>
 
     <br><br>
     <input type="submit" value="Save" class="btn btn-primary"/>
