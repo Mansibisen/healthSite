@@ -18,20 +18,24 @@ integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ
         <hr style="margin:0;">
         <br><br>
     
-</body>
-</html>
 
-<form  style=' padding-left: 100px;' method="POST" action="">
-    <label for="date"><i class="fa fa-calendar" aria-hidden="true" style="padding-right: 5px;"></i> Start date</label>
+
+<form  style=' padding-left: 100px;' method="POST" action="/record/medicationReminder">
+    <label for="date"> Start DATE</label>
+    <input type="date" id="date" name="date"/>
+    <br>
     <input type="date" id="date"/>
     <br><br>
     
-    <label for="treatment"><i class="fa fa-medkit" aria-hidden="true" style="padding-right: 5px;"></i>Medication Details</label>
-    <input type="text" id="treatment" value="relpax,paracetamol etc."/>
+    <label for="treatment">MedicationDetails</label>
+    <input type="text" id="treatment" name="medication"value="relpax,paracetamol etc."/>
 
-    <br><br>
-    <label for="date"> <i class="fa fa-bell-o" aria-hidden="true" style="padding-right: 5px;"></i>Reminder Frequency</label>
-    <select>
+    <br>
+    <label for="date"> ReminderFrequency</label>
+    
+    
+    <label for="date"> Reminder Frequency</label>
+    <select name="Frequency">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -43,7 +47,7 @@ integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ
         <option value="9">9</option>
         <option value="10">10</option>
     </select>
-    <select>
+    <select name="Frequency2">
         <option value="day">day</option>
         <option value="week">week</option>
         <option value="month">month</option>
@@ -51,17 +55,18 @@ integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ
     </select>
     <br><br>
 
-    <label for="note"> <i class="fa fa-comments-o" aria-hidden="true" style="padding-right: 5px;"></i>Short Note :</label>
+    <label for="note">Short Note</label>
+    <input type="text" id="note" name="note"/>
     <br>
-    <textarea name="" id="" style="padding: 5px;"type="text" id="note" placeholder="Is there something you want to share?"></textarea>
-
-    <br><br>
+    
 
     
     <input type="submit" value="Save" class='btn btn-primary'/>
 
 
 </form>
+</body>
+</html>
 
 
 
