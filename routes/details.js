@@ -1,5 +1,6 @@
 const Profile = require("../models/profile")
 const View = require("../models/view")
+const Product = require("../models/product")
 const express = require('express');
 const router = express.Router();
 const {isLoggedIn,isLoggedInA} = require("../middleware/fixers");
