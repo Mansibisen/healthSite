@@ -23,6 +23,7 @@ router.post("/setdoctorreminder",isLoggedIn ,async (req,res) => {
     console.log(user.username)
      Track.find({username:user.username} , async (err,result) => {
         if (err) throw err;
+        console.log(result)
         let mainarray = result[0].upcomingDoctorVisit
         let data = {
             time:req.body.time,
@@ -45,11 +46,16 @@ router.get("/doctorvisitcheck",isLoggedIn ,async (req,res) => {
     console.log(user.username)
     await  Track.find({username:user.username} ,(err,result) => {
         if (err) throw err;
+        
         // rendering not done you need to render all the planned visit which are noted 
         // in the result[0].upcomingDoctorVisit[i] where i is any integer . make other view file to render .
         // as an example i m doing console for result[0].upcomingDoctorVisit[0]
         console.log(result[0].upcomingDoctorVisit[0])
-        res.send(result[0].upcomingDoctorVisit[0])// this should be replaced by file to be rendered
+        res.send(result[0].upcomingDoctorVisit[0])
+        // this should be replaced by file to be rendered
+        for(let i = 0 ; i<result[0].upcomingDoctorVisit.length ; i++){
+            console.log(result[0].upcomingDoctorVisit[i])
+        }
     })
     //console.log(data)
 })
