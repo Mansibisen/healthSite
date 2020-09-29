@@ -50,12 +50,13 @@ router.get("/doctorvisitcheck",isLoggedIn ,async (req,res) => {
         // rendering not done you need to render all the planned visit which are noted 
         // in the result[0].upcomingDoctorVisit[i] where i is any integer . make other view file to render .
         // as an example i m doing console for result[0].upcomingDoctorVisit[0]
-        console.log(result[0].upcomingDoctorVisit[0])
-        res.send(result[0].upcomingDoctorVisit[0])
-        // this should be replaced by file to be rendered
-        for(let i = 0 ; i<result[0].upcomingDoctorVisit.length ; i++){
-            console.log(result[0].upcomingDoctorVisit[i])
-        }
+        
+            for (i=0; i<result[0].upcomingDoctorVisit.length; i++){
+            console.log(result[0].upcomingDoctorVisit[i]);
+            
+           
+        };
+        res.render('doctorrecord', {result:result});
     })
     //console.log(data)
 })
@@ -90,9 +91,13 @@ router.get("/medicationRemindercheck",isLoggedIn ,async (req,res) => {
         // rendering not done you need to render all the medical reminder which are noted 
         // in the result[0].medicationReminder[i] where i is any integer . make other view file to render .
         // as an example i m doing console for result[0].medicationReminder[0]
-        console.log(result[0].medicationReminder[0])
-        res.send(result[0].medicationReminder[0])// this should be replaced by file to be rendered not only for zero but for 0->i
-    })
+       
+        for (i=0; i<result[0].medicationReminder.length; i++){
+            console.log(result[0].medicationReminder[i]);
+            
+           
+        };
+        res.render('meditationrecord', {result:result});})
     //console.log(data)
 })
 
@@ -133,11 +138,18 @@ router.get("/attackrecordcheck",isLoggedIn ,async (req,res) => {
         // rendering not done you need to render all the medical reminder which are noted 
         // in the result[0].AttackRecords[i] where i is any integer . make other view file to render .
         // as an example i m doing console for result[0].AttackRecordsAttackRecords[0]
-        console.log(result[0].AttackRecords[0])
-        res.send(result[0].AttackRecords[0])// this should be replaced by file to be rendered not only for zero but for 0->i
-    })
+        // this should be replaced by file to be rendered not only for zero but for 0->i
+        for (i=0; i<result[0].AttackRecords.length; i++){
+            console.log(result[0].AttackRecords[i]);
+            
+           
+        };
+        res.render('attackrecordOutput', {result:result});
+    });
     //console.log(data)
-})
+    })
+    
+
 
 
 

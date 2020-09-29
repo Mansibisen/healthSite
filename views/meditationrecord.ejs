@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doctor_records</title>
+</head>
+<body style="background-color: #E7F3FF;">
+    <h2 style="margin:0;padding-left: 200px; color: navy; padding-top: 30px; background-color: #E7F3FF;"><i class="fa fa-user-md" aria-hidden="true" style="padding-right:10px ;"></i>Reminders</h2>
+        
+        <hr style="margin:0;">
+        <br><br>
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <th>Date</th>
+               <th>Details</th>
+               <th>Reminder frequency</th>
+               <th>My note</th>
+
+            </thead>
+            
+        <% for(i=0; i<result[0].medicationReminder.length; i++) { %>
+           <tbody>  
+            <tr>
+                <td><%= result[0].medicationReminder[i].time.toDateString() %></td>
+                <td><%= result[0].medicationReminder[i].MedicationDetails %></td>
+                <td><%= result[0].medicationReminder[i].ReminderFrequency %></td>
+                <td><%= result[0].medicationReminder[i].Note%></td>
+              
+            </tr>  
+
+           </tbody>
+             
+            
+        <% } %>
+        </table>  
+
+    </div>
+    
+</body>
+</html>
