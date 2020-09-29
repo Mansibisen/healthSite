@@ -19,9 +19,16 @@ window.addEventListener("load" ,() => {
                 return Response.json()
             })
             .then(data =>{
-                console.log("data",data)
-               
-   
+                document.getElementById('title').innerHTML="Here are some nearby healthcare centres!"
+
+                //console.log("data",data);
+                for (var i=0; i<data.results.length; i++){
+                let adress=data.results[i].address.streetName;
+                let category= data.results[i].poi.categories;
+                console.log("data",adress);
+                console.log("data",category);
+                document.getElementById('data').innerText+=  "Category: "+category + " \n"+" Address: "+ adress +"\n\n";
+                }   
 
             })
         })
