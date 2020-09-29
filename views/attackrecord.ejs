@@ -1,117 +1,138 @@
 <% include partials/header %>
- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
-integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>My record</title>
-</head>
-<body>
+<nav class="navbar navbar-expand-lg sticky-top">
+    <a class="navbar-brand" href="/home" id="companyName" style="color: #E7F3FF; font-family: 'Raleway', sans-serif;">
+        <b><i class="fa fa-heartbeat" style="padding-right: 7px;" aria-hidden="true"></i> Health and Medicine</b>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fa fa-navicon" style="font-size: 30px"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-right: 5%">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/cart" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">Cart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/bill" style="color: #E7F3FF; padding-right: 20px; font-family: 'Raleway', sans-serif; font-size: 18px;", sans-serif">Bill</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/history" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; padding-right: 20px; font-size: 18px">History</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/profile" style="color: #E7F3FF; padding-right: 20px; font-size: 18px; font-family: 'Raleway', sans-serif;">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/news" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">News</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">Hospitals Near Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/record" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">Health Record</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout" style="color: #E7F3FF; padding-right: 10px; font-size: 18px; font-family: 'Raleway', sans-serif; padding-right: 20px;">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
     <div class="myrecord">
-        <h1 style="margin:0;padding-left: 100px; color: navy; padding-top: 30px; background-color: #E7F3FF;"><i class="fa fa-heartbeat" style="padding-right: 10px;" aria-hidden="true"></i>My Health Record</h1>
-        <p style="margin:0;padding-left: 250px; background-color: #E7F3FF;"> ~ Feel free to share us your experience ~</p>
-        
+        <h1 style="margin:0;padding-left: 100px; color: #1e1e1e; padding-top: 30px; background-color: #E7F3FF;"><i class="fa fa-heartbeat" style="padding-right: 10px;" aria-hidden="true"></i>My Health Record</h1>
+        <p style="margin:0; padding-left: 250px; background-color: #E7F3FF;"> ~ Feel free to share us your experience ~</p>
         <hr style="margin:0;">
         <form method="POST" action="/record/attackrecord " id="formdata">
             <label for="date" style="padding-right: 5px;"><i class="fa fa-clock-o" aria-hidden="true" style="padding-right: 5px;"></i>Start time</label>
-            <input name="startdate" type="date" id="date" style="padding: 5px;"/>
-            <br><br>
+            <input name="startdate" type="date" id="date" class="input" style="padding: 5px;"/>
+            <br>
             <label for="date" style="padding-right: 5px;"><i class="fa fa-clock-o" aria-hidden="true" style="padding-right: 5px;"></i>End time </label>
-            <input type="date" id="date" name="enddate"style="padding: 5px;"/>
-            <br><br>
+            <input type="date" id="date" name="enddate" class="input" style="padding: 5px;"/>
+            <br>
             <label style="padding-right: 5px;"><i class="fa fa-ambulance" aria-hidden="true" style="padding-right: 5px;"></i>Attack type  </label>
             <select style="padding: 5px;" name="Attacktype">
-                <option value="Don't know yet">Don't know yet</option>
+                <option value="Don't know yet">Don't Know Yet</option>
                 <option value="Migrane">Migrane</option>
-                <option value="prodrome">prodrome</option>
+                <option value="prodrome">Prodrome</option>
                 <option value="Postdrome">Postdrome</option>
-                <option value="prefer not to say">prefer not to say</option>
+                <option value="prefer not to say">Prefer Not to Say</option>
             </select>
-            <br><br>
+            <br>
             <label style="padding-right: 5px;"><i class="fa fa-heart-o" aria-hidden="true" style="padding-right: 5px;"></i>Pain level </label>
             <select name="Painlevel" style="padding: 5px;">
-                <option value="hurts worst">hurts worst</option>
+                <option value="hurts worst">Extreme Pain</option>
                 <br>
-                <option value="Severe">Severe</option>
+                <option value="Severe">Severe Pain</option>
                 <br>
-                <option value="Moderate">Moderate</option>
+                <option value="Moderate">Moderate Pain</option>
                 <br>
-                <option value="mild">mild</option>
+                <option value="mild">Mild Pain</option>
                 <br>
-                <option value="hurts a bit">hurts a bit </option>
+                <option value="hurts a bit">Bare Minimum Pain</option>
                 <br>
-                <option value="No pain">No pain </option>
+                <option value="No pain">No Pain</option>
             </select>
-            <br><br>
+            <br>
             <label for="treatment" style="padding-right: 5px;"> <i class="fa fa-medkit" aria-hidden="true" style="padding-right: 5px;"></i>Medication opted</label>
-            <input type="text" name="medication" id="treatment" style="padding: 5px;"/>
-            <br><br>
+            <input type="text" name="medication" id="treatment" class="input" style="padding: 5px;"/>
+            <br>
             <label style="padding-right: 5px;"><i class="fa fa-recycle" aria-hidden="true" style="padding-right: 5px;"></i>Relief methods </label>
             <select  name="reliefmethods" style="padding: 5px;">
                 <option value="sleep">sleep</option>
-                <option value="yoga/meditation">yoga/meditation</option>
-                <option value="Ice packs">Ice packs</option>
-                <option value="Hot shower">Hot shower</option>
-                <option value="Cold shower">Cold shower</option>
-                <option value="Drink water">Drink water</option>
-                <option value="Heat pad">Heat pad</option>
-                <option value="Caffiene">Caffiene</option>
-                <option value="food">food</option>
-                <option value="Stay indoor">Stay indoor</option>
-                <option value="other">other</option>
+                <option value="yoga/meditation">Yoga / Meditation</option>
+                <option value="Ice packs">Ice Pack</option>
+                <option value="Hot shower">Hot Shower</option>
+                <option value="Cold shower">Cold Shower</option>
+                <option value="Drink water">Drink Water</option>
+                <option value="Heat pad">Heat Pad</option>
+                <option value="Caffiene">Caffeine</option>
+                <option value="food">Food</option>
+                <option value="Stay indoor">Staying Indoors</option>
+                <option value="other">Other</option>
             </select>
-            <br><br>
+            <br>
             <label style="padding-right: 5px;"><i class="fa fa-assistive-listening-systems" aria-hidden="true" style="padding-right: 5px;"></i>Symptoms </label>
             <select name="Symptoms" style="padding: 5px;">
-                <option value="Nasal congestion">Nasal congestion</option>
+                <option value="Nasal congestion">Nasal Congestion</option>
                 <option value="Neck Pain">Neck Pain</option>
                 <option value="Insomnia">Insomnia</option>
                 <option value="Heat">Heat</option>
                 <option value="Fatigue">Fatigue</option>
-                <option value="blurred vision">blurred vision</option>
-                <option value="diarrhea">diarrhea</option>
-                <option value="nausea">nausea</option>
-                <option value="vomiting">vomiting</option>
-                <option value="pounding pain">pounding pain</option>
-                <option value="other">other</option>
+                <option value="blurred vision">Blurred Vision</option>
+                <option value="diarrhea">Diarrhoea</option>
+                <option value="nausea">Nausea</option>
+                <option value="vomiting">Vomiting</option>
+                <option value="pounding pain">Pounding Pain</option>
+                <option value="other">Other</option>
             </select>
-            <br><br>
+            <br>
             <label style="padding-right: 5px;"><i class="fa fa-eye" aria-hidden="true"style="padding-right: 5px;"></i>Did you see it coming? </label>
             <select name="sense" style="padding: 5px;">
                 <option value="No">No</option>
                 <option value="Weakness">Weakness</option>
-                <option value="fatigue/achiness">fatigue/achiness</option>
-                <option value="headache">headache</option>
-                <option value="muscle stiffness">muscle stiffness</option>
-                <option value="unusually depressed">unusually depressed</option>
-                
-                <option value="other">other</option>
+                <option value="fatigue/achiness">Fatigue / Aches</option>
+                <option value="headache">Headache</option>
+                <option value="muscle stiffness">Muscle Stiffness</option>
+                <option value="unusually depressed">Unusually Depressed</option>
+                <option value="other">Other</option>
             </select>
-            <br><br>
+            <br>
             <label style="padding-right: 5px;"><i class="fa fa-futbol-o" aria-hidden="true" style="padding-right: 5px;"></i>How did it affected your activities? </label>
             <select name="activities" style="padding: 5px;">
-                <option value="No effect">No effect</option>
-                <option value="missed family time">missed family time</option>
-                <option value="Missed school">Missed school</option>
-                <option value="missed work">missed work</option>
-                <option value="slower at work">slower at work</option>
-                <option value="missed social activities">missed social activities</option>
-                
-                <option value="other">other</option>
+                <option value="No effect">No Effect</option>
+                <option value="missed family time">Missed Family Time</option>
+                <option value="Missed school">Missed School</option>
+                <option value="missed work">Missed Work</option>
+                <option value="slower at work">Slower at Work</option>
+                <option value="missed social activities">Missed Social Activities</option>
+                <option value="other">Other</option>
             </select>
-            <br><br>
+            <br>
             <label for="note"> <i class="fa fa-comments-o" aria-hidden="true" style="padding-right: 5px;"></i>Short Note :</label>
-    <br>
-    <textarea  id="note" name="note" style="padding: 5px;"type="text" id="note" placeholder="Is there something you want to share?"></textarea>
-
-            <br><br><br>
+            <br>
+            <textarea  id="note" name="note" style="padding: 5px;"type="text" id="note" placeholder="Is there something you want to share?"></textarea>
+            <br>
             <input type="submit" value="Save my record" class="btn btn-primary"/>
-        
-        
+            <br>
+            <br>
         </form>
     </div>
     <style>

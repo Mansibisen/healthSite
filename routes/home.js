@@ -2,7 +2,7 @@
 const Product = require("../models/product")
 const express = require('express');
 const router = express.Router();
-const {isLoggedIn,isLoggedInA} = require("../middleware/fixers");
+const {isLoggedIn, isLoggedInA} = require("../middleware/fixers");
 
 router.get("/", isLoggedIn, function(req, res) {
 	Product.find({}, function(err, allProducts) {
@@ -10,7 +10,7 @@ router.get("/", isLoggedIn, function(req, res) {
 			console.log(err);
 		}
 		else {
-			res.render("home.ejs", {products: allProducts, status: "Today's Special", user: req.user});
+			res.render("home.ejs", {products: allProducts, status: "Offer", user: req.user});
 		}
 	});
 });
@@ -27,4 +27,4 @@ router.get("/:category", isLoggedIn, function(req, res) {
 	});
 });
 
-module.exports=router;
+module.exports = router;

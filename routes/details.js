@@ -1,9 +1,9 @@
 const Profile = require("../models/profile")
 const View = require("../models/view")
+const Product = require("../models/product")
 const express = require('express');
 const router = express.Router();
 const {isLoggedIn,isLoggedInA} = require("../middleware/fixers");
-const Product = require("../models/product")
 router.get("/:productId", isLoggedIn, function(req, res) {
 	var id = req.params.productId;
 	var user = req.user;
