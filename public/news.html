@@ -9,23 +9,69 @@
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
     <title>Health News</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Raleway&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body style="background-color: #E7F3FF;">
-   <form  class = "form1" action="">
-        <input type="submit" value="Get latest news" id="submit" class='btn btn-success'>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <a class="navbar-brand" href="/home" id="companyName" style="color: #E7F3FF; font-family: 'Raleway', sans-serif;">
+          <b><i class="fa fa-heartbeat" style="padding-right: 7px;" aria-hidden="true"></i> Health and Medicine</b>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="fa fa-navicon" style="font-size: 30px"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-right: 5%">
+          <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/cart" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">Cart</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/bill" style="color: #E7F3FF; padding-right: 20px; font-family: 'Raleway', sans-serif; font-size: 18px;", sans-serif">Bill</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/history" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; padding-right: 20px; font-size: 18px">History</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/profile" style="color: #E7F3FF; padding-right: 20px; font-size: 18px; font-family: 'Raleway', sans-serif;">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/news" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">News</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/search" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">Hospitals Near Me</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/record" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">Health Record</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/logout" style="color: #E7F3FF; padding-right: 10px; font-size: 18px; font-family: 'Raleway', sans-serif; padding-right: 20px;">Logout</a>
+                </li>
+          </ul>
+        </div>
+    </nav>
+   <form class = "form1" action="">
+        <input type="submit" value="Latest News" id="news" class='btn btn-success'>
     <p style="font-family: 'Quicksand', sans-serif; font-size: 16px; padding: 4px; margin-bottom:15px; margin-left: 40%">Never miss out on the latest health news!</p>
     </form> 
-<div class="container">
-    <ul class="newslist"></ul>
-</div>
+    <div class="newsbar">
+        <ul class="newslist" id="newslist"></ul>
+    </div>
 
 
 <script>
      const searchform = document.querySelector('.form1')
      const input = document.querySelector('.text')
      const newslist = document.querySelector('.newslist')
-     const container = document.querySelector('.container')
-     var counter ={ count : 0}
+     const container = document.querySelector('.newsbar')
+     var counter = {count : 0}
      
      searchform.addEventListener('submit',retrieve)
      function retrieve(e) {
@@ -50,22 +96,24 @@
             console.log(ourData)
             for(let i =0 ;i<ourData.articles.length; i++){
                 let d =document.createElement("div");
-                d.setAttribute('class', 'container');
+                d.setAttribute('class', 'newscontainer');
 
                 let p = document.createElement("h1")
-                p.setAttribute('id', 'title')
+                p.setAttribute('id', 'newstitle')
                 let p1 = document.createElement("p")
                 let b = document.createElement("br")
                 let t = document.createTextNode(ourData.articles[i].title);
                 let t1 = document.createTextNode(ourData.articles[i].description);
+                p1.setAttribute('class', 'newstext')
 
                 let img = document.createElement("img")
+                img.setAttribute('class', 'newsimage')
                 img.style.width='75%'
                 let a = document.createElement("a")
         
                 var link = document.createTextNode("Read more...");
                 a.appendChild(link);
-                a.setAttribute('id','link')
+                a.setAttribute('id','newslink')
                 a.href = ourData.articles[i].url
                 img.src = ourData.articles[i].urlToImage
                 img.alt ="image not available"
@@ -76,13 +124,13 @@
                 d.appendChild(b)
                 d.appendChild(a)
                 d.appendChild(p1)
-                 d.style.height="80%";
-                 d.style.width= "80%";
-                 d.style.border= "2px solid grey";
-                 d.style.position= "relative";
-                d.style.backgroundcolor="white";
-                 d.style.boxshadow= "15px 20px 15px #3e3d53";
-                d.style.borderRadius='8px'
+                //  d.style.height="80%";
+                //  d.style.width= "80%";
+                //  d.style.border= "2px solid grey";
+                //  d.style.position= "relative";
+                // d.style.backgroundcolor="white";
+                //  d.style.boxshadow= "15px 20px 15px #3e3d53";
+                // d.style.borderRadius='8px';
                 container.appendChild(d)
                 
                 
