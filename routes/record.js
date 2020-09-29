@@ -21,7 +21,7 @@ router.get("/attackrecord",isLoggedIn,(req,res) =>{
 router.post("/setdoctorreminder",isLoggedIn ,async (req,res) => {
     let user = req.user;
     console.log(user.username)
-     Track.find({username:user.username} , async (err,result) => {
+    await Track.find({username:user.username} , async (err,result) => {
         if (err) throw err;
         console.log(result)
         let mainarray = result[0].upcomingDoctorVisit
@@ -64,7 +64,7 @@ router.get("/doctorvisitcheck",isLoggedIn ,async (req,res) => {
 router.post("/medicationReminder",isLoggedIn , async (req,res) =>{
     let user = req.user;
     console.log(user.username)
-    Track.find({username:user.username} , async (err,result) => {
+    await Track.find({username:user.username} , async (err,result) => {
        if (err) throw err;
        let mainarray = result[0].medicationReminder
        let data = {
@@ -100,7 +100,7 @@ router.get("/medicationRemindercheck",isLoggedIn ,async (req,res) => {
 router.post("/attackrecord",isLoggedIn , async (req,res) =>{
     let user = req.user;
     console.log(user.username)
-    Track.find({username:user.username} , async (err,result) => {
+    await Track.find({username:user.username} , async (err,result) => {
        if (err) throw err;
        let mainarray = result[0].AttackRecords
        let data = {
