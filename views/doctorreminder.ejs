@@ -36,41 +36,33 @@
       </ul>
     </div>
 </nav>
-<h1 style="margin:0;padding-left: 100px; color: navy; padding-top: 30px; background-color: #E7F3FF;"><i class="fa fa-user-md" aria-hidden="true" style="padding-right:10px ;"></i>Book my doctor!</h1>
-        <p style="margin:0;padding-left: 250px; background-color: #E7F3FF;"> ~ We can help you find a doc! ~</p>
-        
-        <hr style="margin:0;">
+<div class="recordcontainer">
+    <h1 id="recordhead"><i class="fa fa-user-md" aria-hidden="true" style="padding-right:10px ;"></i>Book My Doctor!</h1>
+    <form style='padding-left: 100px;' method="POST" action="/record/setdoctorreminder">
+        <label for="date"><i class="fa fa-calendar" aria-hidden="true" style="padding-right: 5px;"></i> DATE</label>
+        <input type="date" id="date" name="date"/>
         <br><br>
-  
+        <label><i class="fa fa-stethoscope" aria-hidden="true" style="padding-right: 5px;"></i>  Doctor Type</label>
+        <select name="type">
+            <option value="Neurologist">Neurologist</option>
+            <option value="General Physician">General Physician</option>
+            <option value="ENT">ENT</option>
+            <option value="childcare specialist">childcare specialist</option>
+            <option value="other">other</option>
+        </select>
+        <br><br>
+        <label for="treatment"> <i class="fa fa-medkit" aria-hidden="true" style="padding-right: 5px;"></i>Treatment :</label>
+        <input style="padding: 5px;"type="text" id="treatment" name="treatment"/>
 
+        <br><br>
+        <label for="note"> <i class="fa fa-comments-o" aria-hidden="true" style="padding-right: 5px;"></i>Short Note :</label>
+        <br>
+        <textarea name="note" id="note" style="padding: 5px;"type="text" id="note" placeholder="Is there something you want to share?"></textarea>
 
-<form style='padding-left: 100px;' method="POST" action="/record/setdoctorreminder">
-    <label for="date"><i class="fa fa-calendar" aria-hidden="true" style="padding-right: 5px;"></i> DATE</label>
-    <input type="date" id="date" name="date"/>
-    <br><br>
-    <label><i class="fa fa-stethoscope" aria-hidden="true" style="padding-right: 5px;"></i>  Doctor Type</label>
-    <select name="type">
-        <option value="Neurologist">Neurologist</option>
-        <option value="General Physician">General Physician</option>
-        <option value="ENT">ENT</option>
-        <option value="childcare specialist">childcare specialist</option>
-        <option value="other">other</option>
-    </select>
-    <br><br>
-    <label for="treatment"> <i class="fa fa-medkit" aria-hidden="true" style="padding-right: 5px;"></i>Treatment :</label>
-    <input style="padding: 5px;"type="text" id="treatment" name="treatment"/>
-
-    <br><br>
-    <label for="note"> <i class="fa fa-comments-o" aria-hidden="true" style="padding-right: 5px;"></i>Short Note :</label>
-    <br>
-    <textarea name="note" id="note" style="padding: 5px;"type="text" id="note" placeholder="Is there something you want to share?"></textarea>
-
-    <br><br>
-    <input type="submit" value="Save" class="btn btn-primary"/>
-
-
-</form>
-
+        <br><br>
+        <input type="submit" value="Save" class="btn btn-primary"/>
+    </form>
+</div>
 
 
 
