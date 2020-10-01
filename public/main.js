@@ -13,7 +13,7 @@ window.addEventListener("load" ,() => {
             const proxy = 'https://cors-anywhere.herokupp.com/'
             let versionNumber = 2
             let apikey = 'jG6JnITy4eipKm7Z2HOzwnGGL14ddDsW'
-            let url = `https:${baseURL}/search/${versionNumber}/nearbySearch/.JSON?key=${apikey}&lat=${lat}&lon=${long}&radius=${50000}&limit=${50}`
+            let url = `https:${baseURL}/search/${versionNumber}/nearbySearch/.JSON?key=${apikey}&lat=${lat}&lon=${long}&radius=${50000}&limit=${5000}`
             fetch(url)
             .then(Response => {
                 return Response.json()
@@ -25,10 +25,15 @@ window.addEventListener("load" ,() => {
                 for (var i=0; i<data.results.length; i++){
                 let adress=data.results[i].address.streetName;
                 let category= data.results[i].poi.categories;
-                console.log("data",adress);
-                console.log("data",category);
-                document.getElementById('data').innerText+=  "Category: "+category + " \n"+" Address: "+ adress +"\n\n";
-                }   
+                
+                if (category[1]==='hospital/polyclinic'){
+                    console.log(data);
+                    console.log("data",adress);
+                    console.log("data",category);
+                    document.getElementById('data').innerText+=  "Category: "+category + " \n"+" Address: "+ adress +"\n\n";
+                   
+                }
+               }   
 
             })
         })
