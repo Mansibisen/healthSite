@@ -1,53 +1,68 @@
 <% include partials/header %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Doctor visit</title>
-</head>
-<body style="background-color: #E7F3FF;">
-    
-</body>
-</html>
-<h1 style="margin:0;padding-left: 100px; color: navy; padding-top: 30px; background-color: #E7F3FF;"><i class="fa fa-user-md" aria-hidden="true" style="padding-right:10px ;"></i>Book my doctor!</h1>
-        <p style="margin:0;padding-left: 250px; background-color: #E7F3FF;"> ~ We can help you find a doc! ~</p>
-        
-        <hr style="margin:0;">
+<nav class="navbar navbar-expand-lg sticky-top">
+    <a class="navbar-brand" href="/home" id="companyName" style="color: #E7F3FF; font-family: 'Raleway', sans-serif;">
+      <b><i class="fa fa-heartbeat" style="padding-right: 7px;" aria-hidden="true"></i> Health and Medicine</b>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="fa fa-navicon" style="font-size: 30px"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-right: 5%">
+      <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/cart" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/bill" style="color: #E7F3FF; padding-right: 20px; font-family: 'Raleway', sans-serif; font-size: 18px;", sans-serif">Bill</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/history" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; padding-right: 20px; font-size: 18px">History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile" style="color: #E7F3FF; padding-right: 20px; font-size: 18px; font-family: 'Raleway', sans-serif;">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/news" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/search" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">Hospitals Near Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/record" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">Health Record</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout" style="color: #E7F3FF; padding-right: 10px; font-size: 18px; font-family: 'Raleway', sans-serif; padding-right: 20px;">Logout</a>
+            </li>
+      </ul>
+    </div>
+</nav>
+<div class="recordcontainer">
+    <h1 id="recordhead"><i class="fa fa-user-md" aria-hidden="true" style="padding-right:10px ;"></i>Book My Doctor!</h1>
+    <form style='padding-left: 100px;' method="POST" action="/record/setdoctorreminder">
+        <label for="date"><i class="fa fa-calendar" aria-hidden="true" style="padding-right: 5px;"></i> DATE</label>
+        <input type="date" id="date" name="date"/>
         <br><br>
-  
+        <label><i class="fa fa-stethoscope" aria-hidden="true" style="padding-right: 5px;"></i>  Doctor Type</label>
+        <select name="type">
+            <option value="Neurologist">Neurologist</option>
+            <option value="General Physician">General Physician</option>
+            <option value="ENT">ENT</option>
+            <option value="childcare specialist">childcare specialist</option>
+            <option value="other">other</option>
+        </select>
+        <br><br>
+        <label for="treatment"> <i class="fa fa-medkit" aria-hidden="true" style="padding-right: 5px;"></i>Treatment :</label>
+        <input style="padding: 5px;"type="text" id="treatment" name="treatment"/>
 
+        <br><br>
+        <label for="note"> <i class="fa fa-comments-o" aria-hidden="true" style="padding-right: 5px;"></i>Short Note :</label>
+        <br>
+        <textarea name="note" id="note" style="padding: 5px;"type="text" id="note" placeholder="Is there something you want to share?"></textarea>
 
-<form style='padding-left: 100px;' method="POST" action="/record/setdoctorreminder">
-    <label for="date"><i class="fa fa-calendar" aria-hidden="true" style="padding-right: 5px;"></i> DATE</label>
-    <input type="date" id="date" name="date"/>
-    <br><br>
-    <label><i class="fa fa-stethoscope" aria-hidden="true" style="padding-right: 5px;"></i>  Doctor Type</label>
-    <select name="type">
-        <option value="Neurologist">Neurologist</option>
-        <option value="General Physician">General Physician</option>
-        <option value="ENT">ENT</option>
-        <option value="childcare specialist">childcare specialist</option>
-        <option value="other">other</option>
-    </select>
-    <br><br>
-    <label for="treatment"> <i class="fa fa-medkit" aria-hidden="true" style="padding-right: 5px;"></i>Treatment :</label>
-    <input style="padding: 5px;"type="text" id="treatment" name="treatment"/>
-
-    <br><br>
-    <label for="note"> <i class="fa fa-comments-o" aria-hidden="true" style="padding-right: 5px;"></i>Short Note :</label>
-    <br>
-    <textarea name="note" id="note" style="padding: 5px;"type="text" id="note" placeholder="Is there something you want to share?"></textarea>
-
-    <br><br>
-    <input type="submit" value="Save" class="btn btn-primary"/>
-
-
-</form>
-
+        <br><br>
+        <input type="submit" value="Save" class="btn btn-primary"/>
+    </form>
+</div>
 
 
 
