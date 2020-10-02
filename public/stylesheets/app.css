@@ -276,6 +276,18 @@ nav {
 	padding-left: 2%;
 }
 
+.recordcontainer {
+	padding: 2% 20%;
+	background-color: #E7F3FF;
+}
+
+#recordhead {
+	padding-bottom: 5%;
+}
+
+#recordtable {
+	border: 1px solid #1e1e1e;
+}
 
 
 

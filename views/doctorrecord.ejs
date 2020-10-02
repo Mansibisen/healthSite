@@ -1,12 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>doctor_records</title>
-</head>
-<body style="background-color: #E7F3FF;">
+<% include partials/header %>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+    <a class="navbar-brand" href="/home" id="companyName" style="color: #E7F3FF; font-family: 'Raleway', sans-serif;">
+      <b><i class="fa fa-heartbeat" style="padding-right: 7px;" aria-hidden="true"></i> Health and Medicine</b>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="fa fa-navicon" style="font-size: 30px"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-right: 5%">
+      <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/cart" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/bill" style="color: #E7F3FF; padding-right: 20px; font-family: 'Raleway', sans-serif; font-size: 18px;", sans-serif">Bill</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/history" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; padding-right: 20px; font-size: 18px">History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile" style="color: #E7F3FF; padding-right: 20px; font-size: 18px; font-family: 'Raleway', sans-serif;">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/news" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/search" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">Hospitals Near Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/record" style="color: #E7F3FF; font-family: 'Raleway', sans-serif; font-size: 18px; padding-right: 20px;">Health Record</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout" style="color: #E7F3FF; padding-right: 10px; font-size: 18px; font-family: 'Raleway', sans-serif; padding-right: 20px;">Logout</a>
+            </li>
+      </ul>
+    </div>
+</nav>
     <h2 style="margin:0;padding-left: 200px; color: navy; padding-top: 30px; background-color: #E7F3FF;"><i class="fa fa-user-md" aria-hidden="true" style="padding-right:10px ;"></i>My Appointments</h2>
         
         <hr style="margin:0;">

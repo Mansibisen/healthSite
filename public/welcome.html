@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-image: url('welcome.bg.jpg'); background-repeat: no-repeat; background-size:100%">
+    <h2 class="ml6" style="padding-top:300px; padding-left: 150px; color: #000069; font-family: 'Inter', sans-serif; font-weight: 250;">
+        <span class="text-wrapper">
+          <span class="letters">The groundwork for all happiness is good health.</span>
+
+        </span>
+      </h2>
+
+      <div style="margin-left: 200px; padding-top: 80px; font-size: 30px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <a href="/login" style="text-decoration: none; color: #1b1b1b;">Click Here to Get Started!</a>
+      </div>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+      <style>
+        body, html {
+          height: 100%;
+          margin: 0;
+        }
+          .ml6 {
+  position: relative;
+  font-weight: 900;
+  font-size: 2.3em;
+}
+
+.ml6 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml6 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+      </style>
+</body>
+
+<script>
+    // Wrap every letter in a span
+var textWrapper = document.querySelector('.ml6 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: false})
+  .add({
+    targets: '.ml6 .letter',
+    translateY: ["1.1em", 0],
+    translateZ: 0,
+    duration: 1000,
+    delay: (el, i) => 50 * i
+  }).add({
+    targets: '.ml6',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+</script>
+</html>
+

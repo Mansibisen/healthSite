@@ -27,6 +27,7 @@ window.addEventListener("load" ,() => {
                 let adress=data.results[i].address;
                 let category= data.results[i].poi.categories;
                 
+<<<<<<< HEAD
                 
                 //for ( i =0 ; i <category.length ; i++ ){
                 if(  category[1] =="hospital/polyclinic"){
@@ -36,6 +37,16 @@ window.addEventListener("load" ,() => {
                 }
             //}
         }  
+=======
+                if (category[1]==='hospital/polyclinic'){
+                    console.log(data);
+                    console.log("data",adress);
+                    console.log("data",category);
+                    document.getElementById('data').innerText+=  "Category: "+category + " \n"+" Address: "+ adress +"\n\n";
+                   
+                }
+               }   
+>>>>>>> f9eeb0a13120d2f370694a081a66b6f697c12f95
 
             })
         })

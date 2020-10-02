@@ -89,8 +89,13 @@ app.use('/register', signupRouter);
 app.use('/admin', adminRouter);
 app.use('/addProfile', addProfileRouter);
 
+
 app.get("/", function(req, res) {
-	res.redirect("/login");
+	res.redirect("/welcome");
+});
+
+app.get("/welcome", function(req, res) {
+	res.sendFile(__dirname + '/public/welcome.html');
 });
 
 app.listen(3000, function() {
